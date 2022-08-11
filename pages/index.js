@@ -1,5 +1,5 @@
 import Head from "next/head"
-import styles from "../styles/Home.module.css"
+import Layout from "../components/Layout";
  
 import { getStoryblokApi, StoryblokComponent, useStoryblokState } from "@storyblok/react";
  
@@ -7,20 +7,15 @@ export default function Home({ story, preview }) {
   story = useStoryblokState(story, {}, preview);
 
   return (
-    <div className={styles.main}>
+    <div>
       <Head>
         <title>SB Onboarding - Next</title>
         <meta name="description" content="Scaffolding a Next.js and Storyblok project" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      <header>
-        <h1 className={styles.title}>
-          { story ? story.name : 'My Site' }
-        </h1>
-      </header>
-
-      <StoryblokComponent blok={story.content} />
+      <Layout>
+        <StoryblokComponent blok={story.content} />
+      </Layout>
     </div>
   )
 }

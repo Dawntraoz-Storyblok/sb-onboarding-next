@@ -1,8 +1,7 @@
-import styles from "../styles/components/Feature.module.css"
 import { storyblokEditable } from "@storyblok/react";
  
 const Feature = ({ blok }) => (
-  <div className={styles.card} {...storyblokEditable(blok)}>
+  <div className="bg-teal-50 rounded-md p-4" {...storyblokEditable(blok)}>
     {blok.name}
   </div>
 );
