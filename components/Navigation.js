@@ -2,7 +2,7 @@ import { useState } from "react";
 import { storyblokEditable, StoryblokComponent } from "@storyblok/react";
 
 import Link from "next/link";
-import Image from 'next/image';
+import Image from "next/image";
 
 const Config = ({ config }) => {
   const [openMenu, setOpenMenu] = useState(false);

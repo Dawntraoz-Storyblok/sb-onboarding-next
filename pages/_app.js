@@ -4,20 +4,24 @@ import '../styles/globals.css'
 ** Connecting to Storyblok
 */
 import { storyblokInit, apiPlugin } from "@storyblok/react";
-import Feature from "../components/Feature";
-import Grid from "../components/Grid";
+
 import Page from "../components/Page";
-import Teaser from "../components/Teaser";
 import Config from "../components/Config";
+
+import Teaser from "../components/Teaser";
+import Hero from "../components/Hero";
+import Grid from "../components/Grid";
+import Feature from "../components/Feature";
 import MenuLink from "../components/MenuLink";
  
 const components = {
-  feature: Feature,
-  grid: Grid,
-  teaser: Teaser,
   page: Page,
   config: Config,
-  "menu_link": MenuLink,
+  teaser: Teaser,
+  "hero-section": Hero,
+  grid: Grid,
+  feature: Feature,
+  "menu-link": MenuLink,
 };
 
 storyblokInit({
