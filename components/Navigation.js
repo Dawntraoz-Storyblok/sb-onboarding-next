@@ -1,16 +1,16 @@
 import { useState } from "react";
+import { storyblokEditable, StoryblokComponent } from "@storyblok/react";
 
 import Link from "next/link";
 import Image from 'next/image';
 
-
-const Navigation = () => {
+const Config = ({ config }) => {
   const [openMenu, setOpenMenu] = useState(false);
- 
+
   return (
     <div className="relative bg-white border-b-2 border-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="flex justify-between items-center  py-6 md:justify-start md:space-x-10">
+        <div className="flex justify-between items-center py-6 md:justify-start md:space-x-10">
           <div className="flex justify-start lg:w-0 lg:flex-1">
             <Link href="/">
               <>
@@ -51,22 +51,10 @@ const Navigation = () => {
               </svg>
             </button>
           </div>
-          <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0 space-x-10">
-            <Link href="/about">
-              <a className="text-base font-medium text-gray-500 hover:text-gray-900">
-                About
-              </a>
-            </Link>
-            <Link href="/blog">
-              <a className="text-base font-medium text-gray-500 hover:text-gray-900">
-                Blog
-              </a>
-            </Link>
-            <Link href="/services">
-              <a className="text-base font-medium text-gray-500 hover:text-gray-900">
-                Services
-              </a>
-            </Link>
+          <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
+            {config.header_menu?.map((nestedBlok) => (
+              <StoryblokComponent blok={nestedBlok} key={nestedBlok._uid} />
+            ))}
           </div>
         </div>
       </div>
@@ -83,8 +71,8 @@ const Navigation = () => {
                   className="h-8 w-auto"
                   src="https://a.storyblok.com/f/88751/92x106/835caf912a/storyblok-logo.png"
                   alt="Storyblok"
-                  width={106}
-                  height={92}
+                  width={48}
+                  height={54}
                 />
                 <div className="-mr-2">
                   <button
@@ -114,32 +102,9 @@ const Navigation = () => {
               </div>
               <div className="mt-6">
                 <nav className="grid gap-y-8">
-                  <Link href="/about">
-                    <a className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
-                      {/* <!-- Heroicon name: outline/chart-bar --> */}
-                      <span className="ml-3 text-base font-medium text-gray-900">
-                        
-                        About
-                      </span>
-                    </a>
-                  </Link>
-                  <Link href="/blog">
-                    <a className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
-                      {/* <!-- Heroicon name: outline/cursor-click --> */}
-                      <span className="ml-3 text-base font-medium text-gray-900">
-                        
-                        Blog
-                      </span>
-                    </a>
-                  </Link>
-                  <Link href="/services">
-                    <a className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
-                      <span className="ml-3 text-base font-medium text-gray-900">
-                        
-                        Services
-                      </span>
-                    </a>
-                  </Link>
+                  {config.header_menu?.map((nestedBlok) => (
+                    <StoryblokComponent blok={nestedBlok} key={nestedBlok._uid} mobile={true} />
+                  ))}
                 </nav>
               </div>
             </div>
@@ -149,5 +114,5 @@ const Navigation = () => {
     </div>
   );
 };
- 
-export default Navigation;
+
+export default Config;

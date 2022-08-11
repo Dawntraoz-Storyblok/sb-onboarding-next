@@ -3,7 +3,7 @@ import Layout from "../components/Layout";
  
 import { getStoryblokApi, StoryblokComponent, useStoryblokState } from "@storyblok/react";
  
-export default function Page({ story }) {
+export default function Page({ story, config }) {
   story = useStoryblokState(story);
  
   return (
@@ -13,7 +13,7 @@ export default function Page({ story }) {
         <meta name="description" content="Scaffolding a Next.js and Storyblok project" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Layout>
+      <Layout config={config}>
         <StoryblokComponent blok={story.content} />
       </Layout>
     </div>
@@ -29,11 +29,13 @@ export async function getStaticProps({ params }) {
  
   const storyblokApi = getStoryblokApi();
   let { data } = await storyblokApi.get(`cdn/stories/${slug}`, sbParams);
+  const { data: config } = await storyblokApi.get('cdn/stories/config', sbParams);
  
   return {
     props: {
       story: data ? data.story : false,
       key: data ? data.story.id : false,
+      config: config.story.content,
     },
     revalidate: 3600,
   };

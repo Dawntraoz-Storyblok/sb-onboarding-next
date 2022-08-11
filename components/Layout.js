@@ -1,10 +1,10 @@
 import Navigation from "./Navigation";
 import Footer from "./Footer";
  
-const Layout = ({ children }) => (
+const Layout = ({ config, children }) => (
   <div>
-    <Navigation/>
-      {children}
+    <Navigation config={config} />
+    {children}
     <Footer />
   </div>
 );
