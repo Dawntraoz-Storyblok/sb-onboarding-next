@@ -1,6 +1,6 @@
 # Storyblok & Next.js tutorial
 
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+This is a [Next.js](https://nextjs.org/) and [Storyblok](https://www.storyblok.com/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) and following [The Next.js Ultimate Tutorial](https://www.storyblok.com/tp/nextjs-headless-cms-ultimate-tutorial).
 
 ## Getting Started
 
@@ -10,17 +10,21 @@ First, run the development server:
 yarn dev
 ```
 
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
 ### Storyblok https config
 
-In another terminal tab, go to your User folder, and run:
+> To use Storyblok v2, you need to configure the Dev Server with HTTPS Proxy Server. To do this follow one of these guides: [MacOS](https://www.storyblok.com/faq/setup-dev-server-https-proxy) or [Windows](https://www.storyblok.com/faq/setup-dev-server-https-windows).
+
+Then, in another terminal tab, go to the folder where you ran the mkcert commands, and run:
 
 ```bash
 local-ssl-proxy --source 3010 --target 3000 --cert localhost.pem --key localhost-key.pem
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+You can now use [https://localhost:3010](https://localhost:3010) for the preview URL in your Storyblok space.
 
-You can start editing the main page structure by modifying `pages/[...slug].js`. The page auto-updates as you edit the file.
+## Next API routes section
 
 [API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
 
