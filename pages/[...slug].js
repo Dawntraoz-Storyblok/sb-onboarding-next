@@ -9,7 +9,7 @@ export default function Page({ story, config }) {
   return (
     <div>
       <Head>
-        <title>SB Onboarding - Next</title>
+        <title>{`${story ? story.name : ''} | SB Onboarding - Next`}</title>
         <meta name="description" content="Scaffolding a Next.js and Storyblok project" />
         <link rel="icon" href="/favicon.ico" />
       </Head>

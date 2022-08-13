@@ -4,7 +4,9 @@ import Layout from "../components/Layout";
 import { getStoryblokApi, StoryblokComponent, useStoryblokState } from "@storyblok/react";
  
 export default function Home({ story, config, preview }) {
-  story = useStoryblokState(story, {}, preview);
+  story = useStoryblokState(story, {
+    resolveRelations: ["popular-articles.articles"],
+  }, preview);
 
   return (
     <div>
@@ -27,6 +29,7 @@ export async function getStaticProps({ preview }) {
   // load the published version
   let sbParams = {
     version: "published",
+    resolve_relations: ["popular-articles.articles"],
   };
  
   // load the draft version on preview only

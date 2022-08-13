@@ -161,10 +161,10 @@
   dependencies:
     storyblok-js-client "^4.5.6"
 
-"@storyblok/react@^1.1.3":
-  version "1.1.3"
-  resolved "https://registry.yarnpkg.com/@storyblok/react/-/react-1.1.3.tgz#d514165b809146cd2a25087e0248bc76f3c891b9"
-  integrity sha512-IHKhCbDxsUWoxl6xEyWRt7y+DCpWaUmH/dAPK9EsLHvXXc3V7y5A+moCsy6pPss/xy8QBu1iG0lH/cdjA3WrIg==
+"@storyblok/react@^1.1.4":
+  version "1.1.4"
+  resolved "https://registry.yarnpkg.com/@storyblok/react/-/react-1.1.4.tgz#b7e65d570b2170891b42243de743872ca17c59e3"
+  integrity sha512-74BELbzNFubVoO0RUKbcDUexkBOHpws1VnzN6pzxvLuZC5tiPxZmHx6nPEWoh1wzg/5tdN5tsIB1E0YrjgnLtQ==
   dependencies:
     "@storyblok/js" "^1.7.1"
 
@@ -174,6 +174,11 @@
   integrity sha512-6JrF+fdUK2zbGpJIlN7G3v966PQjyx/dPt1T9km2wj+EUBqgrxCk3uX4Kct16MIm9gGxfKRcfax2hVf5jvlTzA==
   dependencies:
     tslib "^2.4.0"
+
+"@tailwindcss/line-clamp@^0.4.0":
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/@tailwindcss/line-clamp/-/line-clamp-0.4.0.tgz#03353e31e77636b785f2336e8c978502cec1de81"
+  integrity sha512-HQZo6gfx1D0+DU3nWlNLD5iA6Ef4JAXh0LeD8lOGrJwEDBwwJNKQza6WoXhhY1uQrxOuU8ROxV7CqiQV4CoiLw==
 
 "@types/json5@^0.0.29":
   version "0.0.29"
@@ -1866,6 +1871,11 @@ storyblok-js-client@^4.5.6:
   version "4.5.6"
   resolved "https://registry.yarnpkg.com/storyblok-js-client/-/storyblok-js-client-4.5.6.tgz#caab0bb1ead8618f84afcc35be9305883d85e628"
   integrity sha512-S0cXKkEqGDibD32K48FFodjeu/+eF++nrHhrLzo/bKxrnyQiPChPccFAnzsJCQ6uMvRuVGZzjKwM5/sMeBRthg==
+
+storyblok-rich-text-react-renderer@^2.6.0:
+  version "2.6.0"
+  resolved "https://registry.yarnpkg.com/storyblok-rich-text-react-renderer/-/storyblok-rich-text-react-renderer-2.6.0.tgz#e2fe7765f9b4e4926bbe61887f0d1e180f1a0611"
+  integrity sha512-XFF6YnVJm2RpxvLTrDuBi+i0Oes/nIvY9LwR9ADNV/M596+a7j7YV6uzz+kTU3GFDXCXF2Th3q2hmcblXCTDWg==
 
 string.prototype.matchall@^4.0.7:
   version "4.0.7"
